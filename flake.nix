@@ -30,6 +30,11 @@
             ];
 
             shellHook = ''
+              case "''${PS1:-}" in
+                "(solana-fall-school) "*) ;;
+                *) export PS1="(solana-fall-school) ''${PS1:-\\u@\\h:\\w\\$ }" ;;
+              esac
+
               export SOLANA_FALL_SCHOOL_SOLANA_VERSION="4.2.2"
               export SOLANA_FALL_SCHOOL_ANCHOR_VERSION="0.32.1"
               export SOLANA_FALL_SCHOOL_RUST_VERSION="1.91.1"
