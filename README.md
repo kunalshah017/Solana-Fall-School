@@ -19,15 +19,9 @@ Enter the repository in WSL and start the Nix shell:
 nix develop
 ```
 
-Install or select the upstream tools if needed:
-
-```bash
-avm install 0.32.1
-avm use 0.32.1
-agave-install init 4.2.2
-```
-
-Then verify the complete environment from inside `nix develop`:
+The first `nix develop` automatically installs and selects the pinned Agave and
+Anchor versions using their official installers. Then verify the complete
+environment:
 
 ```bash
 ./scripts/verify-versions.sh
